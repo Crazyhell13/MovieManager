@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MovieManagerTest {
+class MovieManagerFullTest {
     private Movie first = new Movie(6, "Гарри Поттер и философский камень", "Фэнтези", "URL", false);
     private Movie second = new Movie(7, "Властелин колец: Братство кольца", "Фэнтези", "URL", false);
     private Movie third = new Movie(8, "Звездные войны. Эпизод 1", "Фэнтези", "URL", false);
@@ -16,76 +16,6 @@ class MovieManagerTest {
     private Movie ninth = new Movie(14, "Мстители", "Фэнтези", "URL", false);
     private Movie tenth = new Movie(15, "Angry Birds в кино", "Мультфильм", "URL", false);
     private Movie eleventh = new Movie(7, "Помни меня", "Мелодрама", "URL", false);
-
-    @Test
-    public void shouldShowLastMoviesDefaultEmptyTest() {
-        MovieManager manager = new MovieManager();
-        Movie[] expected = new Movie[0];
-        Movie[] actual = manager.showLastMovies();
-        assertArrayEquals(expected, actual);
-    }
-    @Test
-    public void shouldShowLastMoviesEmptyTest() {
-        MovieManager manager = new MovieManager(5);
-        Movie[] expected = new Movie[0];
-        Movie[] actual = manager.showLastMovies();
-        assertArrayEquals(expected, actual);
-    }
-    @Test
-    public void shouldShowLastMoviesNullLengthEmptyTest() {
-        MovieManager manager = new MovieManager(0);
-        Movie[] expected = new Movie[0];
-        Movie[] actual = manager.showLastMovies();
-        assertArrayEquals(expected, actual);
-    }
-    @Test
-    public void shouldAddMoviesDefaultOneObject (){
-        MovieManager manager = new MovieManager ();
-        manager.addMovie(first);
-        int expected = 1;
-        int actual = manager.getFilms().length;
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void shouldAddMoviesOneObject (){
-        MovieManager manager = new MovieManager (5);
-        manager.addMovie(first);
-        int expected = 1;
-        int actual = manager.getFilms().length;
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void shouldAddMoviesNullLengthOneObject (){
-        MovieManager manager = new MovieManager (0);
-        manager.addMovie(first);
-        int expected = 1;
-        int actual = manager.getFilms().length;
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void shouldShowLastMoviesDefaultOneObject (){
-        MovieManager manager = new MovieManager();
-        manager.addMovie(first);
-        Movie[]expected = new Movie[]{first};
-        Movie[]actual = manager.showLastMovies();
-        assertArrayEquals(expected,actual);
-    }
-    @Test
-    public void shouldShowLastMoviesOneObject (){
-        MovieManager manager = new MovieManager(5);
-        manager.addMovie(first);
-        Movie[]expected = new Movie[]{first};
-        Movie[]actual = manager.showLastMovies();
-        assertArrayEquals(expected,actual);
-    }
-    @Test
-    public void shouldShowLastMoviesNullLengthOneObject (){
-        MovieManager manager = new MovieManager(0);
-        manager.addMovie(first);
-        Movie[]expected = new Movie[]{first};
-        Movie[]actual = manager.showLastMovies();
-        assertArrayEquals(expected,actual);
-    }
 
     @Test //добавить фильмы - конструктор по умолчанию
     public void shouldAddMoviesDefault() {
@@ -229,4 +159,6 @@ class MovieManagerTest {
         Movie[] actual = manager.showLastMovies();
         assertArrayEquals(expected, actual);
     }
+
+
 }
